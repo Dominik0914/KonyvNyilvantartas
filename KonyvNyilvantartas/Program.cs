@@ -12,4 +12,15 @@ for (int i=0; i<3;i++)
     Console.Write("\tOldalszám: ");
     ujkonyv.Oldalszam = int.Parse(Console.ReadLine());
     konyvek.Add(ujkonyv);
+    Console.WriteLine("");
 }
+
+int osszoldal = 0;
+Console.WriteLine("Rögzített könyvek listája:");
+for (int i=0;i<konyvek.Count;i++)
+{
+    Console.WriteLine($"\t-{konyvek[i].Cim} ({konyvek[i].Szerzo}) - {konyvek[i].Oldalszam} oldal");
+    osszoldal += konyvek[i].Oldalszam;
+}
+Console.WriteLine("");
+Console.WriteLine($"Összesen elolvasandó: {osszoldal}");
